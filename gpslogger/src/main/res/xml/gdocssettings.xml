@@ -11,7 +11,7 @@
 
     <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference android:key="gdocs_foldername"
                                                                      android:title="Folder name"
-                                                                     android:defaultValue="GPSLogger for Android"
+                                                                     android:defaultValue="GPSLogger2"
         />
     
     <Preference android:key="gdocs_test" android:summary="@string/gdocs_test_summary"

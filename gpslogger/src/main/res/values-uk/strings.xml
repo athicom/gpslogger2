@@ -168,7 +168,7 @@
   <string name="dropbox_authorize_description">Для використання функцій Dropbox ви повинні авторизувати GPSLogger для завантаження файлів у ваш обліковий запис.</string>
   <string name="dropbox_authorize">Авторизувати</string>
   <string name="dropbox_unauthorize">Вилучити авторизацію</string>
-  <string name="dropbox_unauthorize_description">Ви авторизувались в Dropbox. Файли будуть завантажені до теки \'Apps\\GPSLogger for Android\'  Якщо хочете, то ви можете прибрати авторизацію GPSLogger з Dropbox.</string>
+  <string name="dropbox_unauthorize_description">Ви авторизувались в Dropbox. Файли будуть завантажені до теки \'Apps\\GPSLogger2\'  Якщо хочете, то ви можете прибрати авторизацію GPSLogger з Dropbox.</string>
   <string name="dropbox_couldnotauthorize">Не можливо авторизуватись в Dropbox, будь ласка, спробуйте пізніше</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Надіслати</string>

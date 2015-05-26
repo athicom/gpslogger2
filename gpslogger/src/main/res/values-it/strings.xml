@@ -188,7 +188,7 @@
   <string name="dropbox_authorize_description">Per utilizzare Dropbox è necessario autorizzare GPSLogger in modo da poter caricare file sul vostro account Dropbox.</string>
   <string name="dropbox_authorize">Autorizza</string>
   <string name="dropbox_unauthorize">Elimina Autorizzazione</string>
-  <string name="dropbox_unauthorize_description">Sei autorizzato ad usare DropBox. I file saranno caricati in \'Apps\\GPSLogger for Android\'. Potrai cancellare GPSLogger da DropBox quando vorrai.</string>
+  <string name="dropbox_unauthorize_description">Sei autorizzato ad usare DropBox. I file saranno caricati in \'Apps\\GPSLogger2\'. Potrai cancellare GPSLogger da DropBox quando vorrai.</string>
   <string name="dropbox_couldnotauthorize">Non riesco ad autorizzarti a DropBox, riprova più tardi.</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Caricamento</string>

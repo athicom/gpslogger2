@@ -2,6 +2,7 @@ package org.ozonecity.gpslogger2.loggers.customurl;
 
 import android.location.Location;
 import org.ozonecity.gpslogger2.common.SerializableLocation;
+import org.ozonecity.gpslogger2.common.Session;
 import org.ozonecity.gpslogger2.common.Utilities;
 import org.ozonecity.gpslogger2.common.events.UploadEvents;
 import com.path.android.jobqueue.Job;
@@ -58,6 +59,9 @@ public class CustomUrlJob extends Job {
         logUrl = logUrl.replaceAll("(?i)%batt", String.valueOf(batteryLevel));
         logUrl = logUrl.replaceAll("(?i)%aid", String.valueOf(androidId));
         logUrl = logUrl.replaceAll("(?i)%ser", String.valueOf(Utilities.GetBuildSerial()));
+
+        // Vity 26-5-2015 Add %FILE
+        logUrl = logUrl.replaceAll("(?i)%file", String.valueOf(Session.getCurrentFileName()));
 
         tracer.debug("Sending to URL: " + logUrl);
         URL url = new URL(logUrl);

@@ -167,7 +167,7 @@
   <string name="dropbox_authorize_description">For å bruke Dropbox funksjoner, må du godkjenne at GPSLogger laster opp filer til kontoen din.    </string>
   <string name="dropbox_authorize">Godkjenne</string>
   <string name="dropbox_unauthorize">Fjerne autorisasjon</string>
-  <string name="dropbox_unauthorize_description">Du er autorisert med Dropbox. Filene lastes til \"Apps\\GPSLogger for Android\" kan du når som helst koble GPSLogger fra Dropbox hvis du ønsker det.</string>
+  <string name="dropbox_unauthorize_description">Du er autorisert med Dropbox. Filene lastes til \"Apps\\GPSLogger2\" kan du når som helst koble GPSLogger fra Dropbox hvis du ønsker det.</string>
   <string name="dropbox_couldnotauthorize">Kunne ikke godkjenne med Dropbox, vennligst prøv senere</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Opplasting</string>

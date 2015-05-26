@@ -184,7 +184,7 @@
     </string>
   <string name="dropbox_authorize">Autorizovat</string>
   <string name="dropbox_unauthorize">Odebrat autorizaci</string>
-  <string name="dropbox_unauthorize_description">Máte autorizaci pro Dropbox. Soubory budou uploadovány do \'Apps\\GPSLogger for Android\' Pokud chcete, můžete později odpojit GPSLogger z Dropboxu.     </string>
+  <string name="dropbox_unauthorize_description">Máte autorizaci pro Dropbox. Soubory budou uploadovány do \'Apps\\GPSLogger2\' Pokud chcete, můžete později odpojit GPSLogger z Dropboxu.     </string>
   <string name="dropbox_couldnotauthorize">Nelze autorizovat Dropbox, prosím zkuste znovu později</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Upload</string>

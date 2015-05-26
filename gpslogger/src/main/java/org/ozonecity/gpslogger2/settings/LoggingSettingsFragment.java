@@ -32,6 +32,7 @@ import com.afollestad.materialdialogs.prefs.MaterialListPreference;
 import org.ozonecity.gpslogger2.MainPreferenceActivity;
 import org.ozonecity.gpslogger2.R;
 import org.ozonecity.gpslogger2.common.FileDialog.FolderSelectorDialog;
+import org.ozonecity.gpslogger2.common.Session;
 import org.ozonecity.gpslogger2.common.Utilities;
 import org.ozonecity.gpslogger2.views.component.CustomSwitchPreference;
 import org.slf4j.LoggerFactory;
@@ -203,17 +204,24 @@ public class LoggingSettingsFragment extends PreferenceFragment
                         .build();
 
                 EditText userInput = (EditText) alertDialog.getCustomView().findViewById(R.id.alert_user_input);
-                userInput.setText(prefs.getString("log_customurl_url","http://localhost/log?lat=%LAT&longitude=%LON&time=%TIME&s=%SPD"));
+
+                // ViTy 26-5-2015 Add %FILE
+                //userInput.setText(prefs.getString("log_customurl_url","http://localhost/log?lat=%LAT&longitude=%LON&time=%TIME&s=%SPD"));
+                userInput.setText(prefs.getString("log_customurl_url","http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%TIME" +
+                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV" +
+                        "&extrainfo=%SAT%20%ALT%20%DESC&direction=%DIR&speed=%SPD"));
+
                 userInput.setSingleLine(true);
-                userInput.setLines(4);
+                userInput.setLines(8);
                 userInput.setHorizontallyScrolling(false);
                 TextView tvMessage = (TextView)alertDialog.getCustomView().findViewById(R.id.alert_user_message);
 
-                String legend = MessageFormat.format("{0} %LAT\n{1} %LON\n{2} %DESC\n{3} %SAT\n{4} %ALT\n{5} %SPD\n{6} %ACC\n{7} %DIR\n{8} %PROV\n{9} %TIME\n{10} %BATT\n{11} %AID\n{12} %SER",
+                // ViTy 26-5-2015 Add %FILE
+                String legend = MessageFormat.format("{0} %LAT\n{1} %LON\n{2} %DESC\n{3} %SAT\n{4} %ALT\n{5} %SPD\n{6} %ACC\n{7} %DIR\n{8} %PROV\n{9} %TIME\n{10} %BATT\n{11} %AID\n{12} %SER\n{13} %FILE",
                         getString(R.string.txt_latitude), getString(R.string.txt_longitude), getString(R.string.txt_annotation),
                         getString(R.string.txt_satellites), getString(R.string.txt_altitude), getString(R.string.txt_speed),
                         getString(R.string.txt_accuracy), getString(R.string.txt_direction), getString(R.string.txt_provider),
-                        getString(R.string.txt_time_isoformat), "Battery:", "Android ID:", "Serial:");
+                        getString(R.string.txt_time_isoformat), "Battery:", "Android ID:", "Serial:", "File Name:");
 
                 tvMessage.setText(legend);
                 alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);

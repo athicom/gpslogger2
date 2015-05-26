@@ -126,7 +126,7 @@
   <string name="dropbox_authorize_description">Para magamit ang mga katangian ng Dropbox, kakailanganin ang iyong pahintulot upang makapag-upload ang GPSLogger sa iyong account     </string>
   <string name="dropbox_authorize">I-awtorisa</string>
   <string name="dropbox_unauthorize">Alisin ang Awtorisasyon</string>
-  <string name="dropbox_unauthorize_description">Ikaw ay awtorisado sa Dropbox. Ang mga files ay mai-upload sa \'Apps\\GPSLogger for Android\'. Maaring matanggal ang GPSLogger mula sa Dropbox ano mang oras     </string>
+  <string name="dropbox_unauthorize_description">Ikaw ay awtorisado sa Dropbox. Ang mga files ay mai-upload sa \'Apps\\GPSLogger2\'. Maaring matanggal ang GPSLogger mula sa Dropbox ano mang oras     </string>
   <string name="dropbox_couldnotauthorize">Hindi maka-awtorisa sa Dropbox, Subukan muli pagkaraan ng ilang sandali</string>
   <string name="menu_upload">Upload</string>
   <string name="autoemail_from">Pinagmulang address</string>

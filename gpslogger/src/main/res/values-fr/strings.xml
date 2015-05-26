@@ -189,7 +189,7 @@ une plus grande précision à basses fréquences.</string>
   <string name="dropbox_authorize_description">Pour utiliser les fonctionnalités de Dropbox, vous devrez autoriser GPSLogger à décharger des fichiers vers votre compte.     </string>
   <string name="dropbox_authorize">Permettre</string>
   <string name="dropbox_unauthorize">Supprimer la permission</string>
-  <string name="dropbox_unauthorize_description">Vous êtes authentifié à Dropbox. Les fichiers seront déchargés vers \'Apps\\GPSLogger for Android\'. Vous pouvez dissocier GPSLogger de Dropbox si vous le souhaitez.     </string>
+  <string name="dropbox_unauthorize_description">Vous êtes authentifié à Dropbox. Les fichiers seront déchargés vers \'Apps\\GPSLogger2\'. Vous pouvez dissocier GPSLogger de Dropbox si vous le souhaitez.     </string>
   <string name="dropbox_couldnotauthorize">Ne peut pas être authentifié par Dropbox. Essayer ultérieurement.</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Décharger</string>

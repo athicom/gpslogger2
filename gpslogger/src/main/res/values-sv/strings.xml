@@ -185,7 +185,7 @@
     </string>
   <string name="dropbox_authorize">Auktorisera</string>
   <string name="dropbox_unauthorize">Ta bort auktorisering</string>
-  <string name="dropbox_unauthorize_description">Du är aukoriserad mot Dropbox. Filer kommer laddas upp till \'Apps\\GPSLogger for Android\' Du kan avlänka GPSLogger från Dropbox om du vill.
+  <string name="dropbox_unauthorize_description">Du är aukoriserad mot Dropbox. Filer kommer laddas upp till \'Apps\\GPSLogger2\' Du kan avlänka GPSLogger från Dropbox om du vill.
     </string>
   <string name="dropbox_couldnotauthorize">Kunde inte auktorisera mot Dropbox, försök igen senare</string>
   <string name="dropbox_upload">Dropbox</string>

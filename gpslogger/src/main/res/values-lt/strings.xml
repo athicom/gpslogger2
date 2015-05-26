@@ -120,7 +120,7 @@
   <string name="dropbox_authorize_description">Norint naudotis Dropbox funkcijomis, jums reikės autorizuoti GPSLogger, kad galėtų įkelti failus į jūsų paskyrą.</string>
   <string name="dropbox_authorize">Autorizuoti</string>
   <string name="dropbox_unauthorize">Pašalinti autorizaciją</string>
-  <string name="dropbox_unauthorize_description">Jus autorizavo Dropbox. Failai bus įkelti į  \'Apps\\GPSLogger for Android\'Jūs galite atjungti GPSLogger nuo Dropbox, jeigu norite.</string>
+  <string name="dropbox_unauthorize_description">Jus autorizavo Dropbox. Failai bus įkelti į  \'Apps\\GPSLogger2\'Jūs galite atjungti GPSLogger nuo Dropbox, jeigu norite.</string>
   <string name="dropbox_couldnotauthorize">Autorizacija su Dropbox nepavyko, prašau pabandyti vėliau</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Įkelti</string>

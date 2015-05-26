@@ -205,7 +205,7 @@ na váš účet.
   <string name="dropbox_unauthorize">Odvolať autorizáciu</string>
   <string name="dropbox_unauthorize_description">Autorizácia k službe Dropbox bola udelená. Súbory sa budú
 ukladať do zložky
-\'Apps\\GPSLogger for Android\'. Ak si to budete želať, môžete
+\'Apps\\GPSLogger2\'. Ak si to budete želať, môžete
 zrušiť prepojenie aplikácie GPSLogger so službou Dropbox.
          </string>
   <string name="dropbox_couldnotauthorize">Nemožno autorizovať Dropbox, prosím skúste to neskôr</string>

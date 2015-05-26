@@ -111,7 +111,7 @@ public class GDocsJob extends Job {
 
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
-            conn.setRequestProperty("User-Agent", "GPSLogger for Android");
+            conn.setRequestProperty("User-Agent", "GPSLogger2");
             conn.setRequestProperty("Authorization", "Bearer " + authToken);
             conn.setRequestProperty("Content-Type", GetMimeTypeFromFileName(fileName));
             conn.setRequestProperty("Content-Length", String.valueOf(fileContents.length));
@@ -172,7 +172,7 @@ public class GDocsJob extends Job {
 
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
-            conn.setRequestProperty("User-Agent", "GPSLogger for Android");
+            conn.setRequestProperty("User-Agent", "GPSLogger2");
             conn.setRequestProperty("Authorization", "Bearer " + authToken);
             conn.setRequestProperty("Content-Type", "application/json");
 
@@ -234,7 +234,7 @@ public class GDocsJob extends Job {
 
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            conn.setRequestProperty("User-Agent", "GPSLogger for Android");
+            conn.setRequestProperty("User-Agent", "GPSLogger2");
             conn.setRequestProperty("Authorization", "OAuth " + authToken);
 
             String fileMetadata = Utilities.GetStringFromInputStream(conn.getInputStream());

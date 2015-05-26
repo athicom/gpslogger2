@@ -260,7 +260,7 @@ public class Utilities {
         AppSettings.setOpenGTSServerCommunicationMethod(prefs.getString("opengts_server_communication_method", ""));
         AppSettings.setOpenGTSServerPath(prefs.getString("autoopengts_server_path", ""));
         AppSettings.setOpenGTSDeviceId(prefs.getString("opengts_device_id", ""));
-        AppSettings.setOpenGTSAccountName(prefs.getString("opengts_accountname",""));
+        AppSettings.setOpenGTSAccountName(prefs.getString("opengts_accountname", ""));
 
         AppSettings.setGDocsAutoSendEnabled(prefs.getBoolean("gdocs_enabled", false));
         AppSettings.setDropboxAutoSendEnabled(prefs.getBoolean("dropbox_enabled", false));
@@ -270,7 +270,7 @@ public class Utilities {
         AppSettings.setFtpServerName(prefs.getString("autoftp_server", ""));
         AppSettings.setFtpUsername(prefs.getString("autoftp_username", ""));
         AppSettings.setFtpPassword(prefs.getString("autoftp_password", ""));
-        AppSettings.setFtpDirectory(prefs.getString("autoftp_directory", "GPSLogger"));
+        AppSettings.setFtpDirectory(prefs.getString("autoftp_directory", "GPSLogger2"));
         AppSettings.setFtpPort(Integer.valueOf(prefs.getString("autoftp_port", "21")));
         AppSettings.setFtpUseFtps(prefs.getBoolean("autoftp_useftps", false));
         AppSettings.setFtpProtocol(prefs.getString("autoftp_ssltls", ""));
@@ -287,7 +287,7 @@ public class Utilities {
             AppSettings.setAbsoluteTimeout(120);
         }
 
-        AppSettings.setGoogleDriveFolderName(prefs.getString("gdocs_foldername", "GPSLogger for Android"));
+        AppSettings.setGoogleDriveFolderName(prefs.getString("gdocs_foldername", "GPSLogger2"));
 
         AppSettings.setShouldNotLogIfUserIsStill(prefs.getBoolean("activityrecognition_dontlogifstill", false));
 

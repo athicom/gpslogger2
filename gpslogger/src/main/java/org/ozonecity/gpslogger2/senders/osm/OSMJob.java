@@ -54,7 +54,7 @@ public class OSMJob extends Job {
 
         entity.addPart("file", gpxBody);
         if (description == null || description.length() <= 0) {
-            description = "GPSLogger for Android";
+            description = "GPSLogger2";
         }
 
         entity.addPart("description", new StringBody(description));

@@ -18,12 +18,17 @@
 package org.ozonecity.gpslogger2.settings;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.util.Log;
+
+import com.afollestad.materialdialogs.util.DialogUtils;
+
 import org.ozonecity.gpslogger2.R;
 
 /**
@@ -64,8 +69,8 @@ public class GeneralSettingsFragment extends PreferenceFragment implements Prefe
             aboutInfo.setOnPreferenceClickListener(this);
         } catch (PackageManager.NameNotFoundException e) {
         }
-    }
 
+    }
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
@@ -107,4 +112,5 @@ public class GeneralSettingsFragment extends PreferenceFragment implements Prefe
         }
         return false;
     }
+
 }

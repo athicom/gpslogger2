@@ -168,7 +168,7 @@
   <string name="dropbox_authorize">Autoryzuj</string>
   <string name="dropbox_unauthorize">Usuń autoryzację</string>
   <string name="dropbox_unauthorize_description">GPSLogger został połączony z Dropboxem. Pliki będą przesyłane do 
-        \'Apps\\GPSLogger for Android\'. Istnieje możliwość odłączenia GPSLoggera od Dropbox w razie konieczności.
+        \'Apps\\GPSLogger2\'. Istnieje możliwość odłączenia GPSLoggera od Dropbox w razie konieczności.
     </string>
   <string name="dropbox_couldnotauthorize">Nie można uzyskać autoryzacji Dropboxa, proszę spróbować ponownie.</string>
   <string name="dropbox_upload">Dropbox</string>

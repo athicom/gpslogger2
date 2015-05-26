@@ -180,7 +180,7 @@ Tetszés szerint adhat hozzá dinamikus paramétereket, mint a sorozatszám, év
   <string name="dropbox_authorize_description">Dropbox funkciók használatához szüksége lesz hitelesítésre, hogy a GPSLogger fájlokat fel lehessen tölteni     </string>
   <string name="dropbox_authorize">Hitelesítés</string>
   <string name="dropbox_unauthorize">Engedélyezés törlése</string>
-  <string name="dropbox_unauthorize_description">A Dropbox hitelesítés megtörtént. Fájlok feltöltve, \"Apps\\GPSLogger for Android\" könyvtárból. Bármikor leállíthatja a további feltöltést     </string>
+  <string name="dropbox_unauthorize_description">A Dropbox hitelesítés megtörtént. Fájlok feltöltve, \"Apps\\GPSLogger2 for Android\" könyvtárból. Bármikor leállíthatja a további feltöltést     </string>
   <string name="dropbox_couldnotauthorize">Nem engedélyezett a Dropbox, próbálja meg később</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Feltöltés</string>

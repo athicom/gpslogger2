@@ -170,7 +170,7 @@
   <string name="dropbox_authorize_description">Para usar las funciones de Dropbox debe autorizar el envío de archivos a su cuenta desde GPSLogger.</string>
   <string name="dropbox_authorize">Autorizar</string>
   <string name="dropbox_unauthorize">Retirar autorización</string>
-  <string name="dropbox_unauthorize_description">Ha sido autorizado en Dropbox. Los archivos se enviarán a \'Apps\\GPSLogger for Android\'. Puede anular la autorización cuando quiera.</string>
+  <string name="dropbox_unauthorize_description">Ha sido autorizado en Dropbox. Los archivos se enviarán a \'Apps\\GPSLogger2\'. Puede anular la autorización cuando quiera.</string>
   <string name="dropbox_couldnotauthorize">No se pudo autorizar en Dropbox, por favor vuelva a intentarlo</string>
   <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Subir</string>

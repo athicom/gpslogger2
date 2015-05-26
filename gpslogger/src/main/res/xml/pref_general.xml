@@ -31,7 +31,6 @@
         android:key="debugtofile"
         android:defaultValue="false"/>
 
-
     <Preference android:key="about_version_info"></Preference>
 
     <Preference

@@ -151,7 +151,7 @@ public class GDocsHelper implements IFileSender {
             }
 
             if(Utilities.IsNullOrEmpty(uploadFolderName)){
-                uploadFolderName = "GPSLogger for Android";
+                uploadFolderName = "GPSLogger2";
             }
 
             JobManager jobManager = AppSettings.GetJobManager();
