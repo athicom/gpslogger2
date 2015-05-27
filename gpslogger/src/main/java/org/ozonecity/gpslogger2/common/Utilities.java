@@ -58,6 +58,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -75,7 +76,7 @@ public class Utilities {
             LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
             lc.reset();
 
-            //final String LOG_DIR = "/sdcard/GPSLogger";
+            //final String LOG_DIR = "/sdcard/GPSLogger2";
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
             final String LOG_DIR = prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(context).getAbsolutePath());
 
@@ -537,7 +538,6 @@ public class Utilities {
                 Locale.US);
         return sdf.format(dateToFormat);
     }
-
 
     public static boolean IsEmailSetup() {
         return AppSettings.isEmailAutoSendEnabled()

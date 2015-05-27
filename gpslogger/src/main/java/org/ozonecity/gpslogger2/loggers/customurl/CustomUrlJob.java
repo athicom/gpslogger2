@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CustomUrlJob extends Job {
@@ -60,8 +61,12 @@ public class CustomUrlJob extends Job {
         logUrl = logUrl.replaceAll("(?i)%aid", String.valueOf(androidId));
         logUrl = logUrl.replaceAll("(?i)%ser", String.valueOf(Utilities.GetBuildSerial()));
 
-        // Vity 26-5-2015 Add %FILE
+        // ViTy 26-5-2015 Add %FILE
         logUrl = logUrl.replaceAll("(?i)%file", String.valueOf(Session.getCurrentFileName()));
+
+        // ViTy 27-5-2015 Add %DT
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+        logUrl = logUrl.replaceAll("(?i)%dt", sdf.format(new Date()));
 
         tracer.debug("Sending to URL: " + logUrl);
         URL url = new URL(logUrl);

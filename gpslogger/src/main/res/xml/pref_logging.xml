@@ -19,7 +19,8 @@
         <org.ozonecity.gpslogger2.views.component.CustomSwitchPreference
             android:title="@string/log_customurl_title"
             android:summary="@string/log_customurl_summary"
-            android:key="log_customurl_enabled">
+            android:key="log_customurl_enabled"
+            android:defaultValue="true">
         </org.ozonecity.gpslogger2.views.component.CustomSwitchPreference>
 
         <org.ozonecity.gpslogger2.views.component.CustomSwitchPreference
@@ -51,7 +52,7 @@
             android:title="@string/new_file_creation_title"
             android:summary="@string/new_file_creation_summary"
             android:entries="@array/filecreation_entries"
-            android:defaultValue="onceaday"
+            android:defaultValue="everystart"
             android:entryValues="@array/filecreation_values"/>
         <Preference
             android:key="new_file_custom_name"
@@ -70,7 +71,7 @@
             android:key="new_file_prefix_serial"
             android:title="@string/new_file_prefix_serial_title"
             android:summary="@string/new_file_prefix_serial_summary"
-            android:defaultValue="false"
+            android:defaultValue="true"
             />
     </PreferenceCategory>
 
