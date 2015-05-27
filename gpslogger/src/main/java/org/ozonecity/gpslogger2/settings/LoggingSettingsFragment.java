@@ -208,8 +208,8 @@ public class LoggingSettingsFragment extends PreferenceFragment
                 // ViTy 27-5-2015 Add %FILE & %DT & Fix IP Address
                 //userInput.setText(prefs.getString("log_customurl_url","http://localhost/log?lat=%LAT&longitude=%LON&time=%TIME&s=%SPD"));
                 userInput.setText(prefs.getString("log_customurl_url","http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
-                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger" +
-                        "&extrainfo=%SAT%20%ALT%20%DESC&direction=%DIR&speed=%SPD"));
+                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+                        "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
                 userInput.setSingleLine(true);
                 userInput.setLines(8);

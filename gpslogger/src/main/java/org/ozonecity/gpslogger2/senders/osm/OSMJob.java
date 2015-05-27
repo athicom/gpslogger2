@@ -15,6 +15,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.nio.charset.Charset;
 
 public class OSMJob extends Job {
 
@@ -49,6 +50,9 @@ public class OSMJob extends Job {
         consumer.sign(request);
 
         MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
+
+        // ViTy 27-5-2015 Fixed UTF8
+        //MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE, null, Charset.forName("UTF-8"));
 
         FileBody gpxBody = new FileBody(chosenFile);
 

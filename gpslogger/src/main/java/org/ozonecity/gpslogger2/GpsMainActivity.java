@@ -60,6 +60,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
@@ -181,9 +182,22 @@ public class GpsMainActivity extends ActionBarActivity
     private void loadPresetProperties() {
 
         //Either look for /<appfolder>/gpslogger.properties or /sdcard/gpslogger.properties
-        File file =  new File(Utilities.GetDefaultStorageFolder(getApplicationContext()) + "/gpslogger.properties");
+        File file =  new File(Utilities.GetDefaultStorageFolder(getApplicationContext()) + "/gpslogger2.properties");
+        // ViTy 27-5-2015 Fixed write file properties
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         if(!file.exists()){
-            file = new File(Environment.getExternalStorageDirectory() + "/gpslogger.properties");
+            //Either look for /sdcard/gpslogger.properties
+            file = new File(Environment.getExternalStorageDirectory() + "/gpslogger2.properties");
+            // ViTy 27-5-2015 Fixed write file properties
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             if(!file.exists()){
                 return;
             }

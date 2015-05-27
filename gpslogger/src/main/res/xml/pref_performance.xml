@@ -16,7 +16,7 @@
         android:numeric="integer"
         android:maxLength="4"
         android:hint="@string/time_before_logging_hint"
-        android:defaultValue="10"/>
+        android:defaultValue="2"/>
 
     <org.ozonecity.gpslogger2.views.component.CustomSwitchPreference
         android:key="keep_fix"
@@ -52,7 +52,7 @@
         android:dialogTitle="@string/retry_time_dialog_title"
         android:numeric="integer"
         android:maxLength="4"
-        android:defaultValue="10"
+        android:defaultValue="60"
         android:hint="@string/retry_time_hint"/>
 
     <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
@@ -62,7 +62,7 @@
         android:dialogTitle="@string/retry_time_dialog_title"
         android:numeric="integer"
         android:maxLength="4"
-        android:defaultValue="60"
+        android:defaultValue="120"
         android:hint="@string/retry_time_hint"/>
 
     <PreferenceCategory android:title="Altitude">

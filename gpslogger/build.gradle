@@ -184,7 +184,7 @@ if (project.hasProperty("CROWDIN_API_KEY")) {
     crowdinDownload {
         apiKey = CROWDIN_API_KEY
         destination = "$projectDir/src/main/res"
-        projectId = 'gpslogger-for-android'
+        projectId = 'gpslogger2-for-android'
 
         //Android projects
         renameMapping = [
@@ -197,7 +197,7 @@ if (project.hasProperty("CROWDIN_API_KEY")) {
 
     crowdinUpload {
         apiKey = CROWDIN_API_KEY
-        projectId = 'gpslogger-for-android'
+        projectId = 'gpslogger2-for-android'
         sourceFile = "$projectDir/src/main/res/values/strings.xml"
     }
 }
