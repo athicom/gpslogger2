@@ -76,9 +76,10 @@ public class Utilities {
             LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
             lc.reset();
 
-            //final String LOG_DIR = "/sdcard/GPSLogger2";
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            final String LOG_DIR = prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(context).getAbsolutePath());
+            // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+            final String LOG_DIR = "/sdcard/GPSLogger2";
+            //SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            //final String LOG_DIR = prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(context).getAbsolutePath());
 
             GpsRollingFileAppender<ILoggingEvent> rollingFileAppender = new GpsRollingFileAppender<ILoggingEvent>();
             rollingFileAppender.setAppend(true);
@@ -162,16 +163,22 @@ public class Utilities {
 
         AppSettings.setLogToNmea(prefs.getBoolean("log_nmea", false));
 
-        AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", false));
-        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", false));
+        AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", true));
+        // AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
+        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
+                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+                        "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
         AppSettings.setLogToOpenGts(prefs.getBoolean("log_opengts", false));
 
         Set<String> listeners = new HashSet<String>(GetListeners());
         AppSettings.setChosenListeners(prefs.getStringSet("listeners", listeners));
 
-        String minimumDistanceString = prefs.getString(
-                "distance_before_logging", "0");
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //String minimumDistanceString = prefs.getString("distance_before_logging", "0");
+        String minimumDistanceString = prefs.getString("distance_before_logging", "50");
 
         if (minimumDistanceString != null && minimumDistanceString.length() > 0) {
             AppSettings.setMinimumDistanceInMeters(Integer
@@ -180,8 +187,9 @@ public class Utilities {
             AppSettings.setMinimumDistanceInMeters(0);
         }
 
-        String minimumAccuracyString = prefs.getString(
-                "accuracy_before_logging", "0");
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //String minimumAccuracyString = prefs.getString("accuracy_before_logging", "0");
+        String minimumAccuracyString = prefs.getString("accuracy_before_logging", "50");
 
         if (minimumAccuracyString != null && minimumAccuracyString.length() > 0) {
             AppSettings.setMinimumAccuracyInMeters(Integer
@@ -190,8 +198,9 @@ public class Utilities {
             AppSettings.setMinimumAccuracyInMeters(0);
         }
 
-        String minimumSecondsString = prefs.getString("time_before_logging",
-                "60");
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //String minimumSecondsString = prefs.getString("time_before_logging", "60");
+        String minimumSecondsString = prefs.getString("time_before_logging", "1");
 
         if (minimumSecondsString != null && minimumSecondsString.length() > 0) {
             AppSettings
@@ -200,11 +209,9 @@ public class Utilities {
             AppSettings.setMinimumSeconds(60);
         }
 
-        AppSettings.setKeepFix(prefs.getBoolean("keep_fix",
-                false));
+        AppSettings.setKeepFix(prefs.getBoolean("keep_fix", false));
 
-        String retryIntervalString = prefs.getString("retry_time",
-                "60");
+        String retryIntervalString = prefs.getString("retry_time", "60");
 
         if (retryIntervalString != null && retryIntervalString.length() > 0) {
             AppSettings
@@ -219,8 +226,9 @@ public class Utilities {
          *     custom file (static),
          *     every time the service starts 
          */
-        AppSettings.setNewFileCreation(prefs.getString("new_file_creation",
-                "onceaday"));
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //AppSettings.setNewFileCreation(prefs.getString("new_file_creation", "onceaday"));
+        AppSettings.setNewFileCreation(prefs.getString("new_file_creation", "everystart"));
 
         if (AppSettings.getNewFileCreation().equals("onceaday")) {
             AppSettings.setNewFileOnceADay(true);
@@ -276,11 +284,16 @@ public class Utilities {
         AppSettings.setFtpUseFtps(prefs.getBoolean("autoftp_useftps", false));
         AppSettings.setFtpProtocol(prefs.getString("autoftp_ssltls", ""));
         AppSettings.setFtpImplicit(prefs.getBoolean("autoftp_implicit", false));
-        AppSettings.setGpsLoggerFolder(prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(context).getAbsolutePath()));
-        AppSettings.setFileNamePrefixSerial(prefs.getBoolean("new_file_prefix_serial", false));
 
-        String absoluteTimeoutString = prefs.getString("absolute_timeout",
-                "120");
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //AppSettings.setGpsLoggerFolder(prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(context).getAbsolutePath()));
+        AppSettings.setGpsLoggerFolder(prefs.getString("gpslogger_folder", "/sdcard/GPSLogger2"));
+
+        // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        AppSettings.setFileNamePrefixSerial(prefs.getBoolean("new_file_prefix_serial", false));
+        AppSettings.setFileNamePrefixSerial(prefs.getBoolean("new_file_prefix_serial", true));
+
+        String absoluteTimeoutString = prefs.getString("absolute_timeout", "120");
 
         if (absoluteTimeoutString != null && absoluteTimeoutString.length() > 0) {
             AppSettings.setAbsoluteTimeout(Integer.valueOf(absoluteTimeoutString));
