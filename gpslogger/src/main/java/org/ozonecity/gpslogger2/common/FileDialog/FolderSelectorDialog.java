@@ -77,7 +77,11 @@ public class FolderSelectorDialog extends DialogFragment implements MaterialDial
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new MaterialDialog.Builder(getActivity())
-                .title(parentFolder.getAbsolutePath())
+
+                // ViTy 28-5-2015 Set Default Path
+                //.title(parentFolder.getAbsolutePath())
+                .title("/sdcard/GPSLogger2")
+
                 .items(getContentsArray())
                 .itemsCallback(this)
                 .callback(mButtonCallback)
@@ -99,7 +103,11 @@ public class FolderSelectorDialog extends DialogFragment implements MaterialDial
 
         parentContents = listFiles();
         MaterialDialog dialog = (MaterialDialog) getDialog();
-        dialog.setTitle(parentFolder.getAbsolutePath());
+
+        // ViTy 28-5-2015 Set Default Path
+        //dialog.setTitle(parentFolder.getAbsolutePath());
+        dialog.setTitle("/sdcard/GPSLogger2");
+
         dialog.setItems(getContentsArray());
     }
 

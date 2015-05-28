@@ -27,8 +27,9 @@ public class ContentApi extends ContentProvider {
 
         switch(queryType){
             case "gpslogger_folder":
-                result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder",
-                        Utilities.GetDefaultStorageFolder(getContext()).getAbsolutePath());
+                // ViTy 28-5-2015 Set Default Path
+                //result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(getContext()).getAbsolutePath());
+                result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", "/sdcard/GPSLogger2");
                 break;
             default:
                 result = "NULL";
