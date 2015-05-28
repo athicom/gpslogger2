@@ -51,9 +51,6 @@ public class OSMJob extends Job {
 
         MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
 
-        // ViTy 27-5-2015 Fixed UTF8
-        //MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE, null, Charset.forName("UTF-8"));
-
         FileBody gpxBody = new FileBody(chosenFile);
 
         entity.addPart("file", gpxBody);
