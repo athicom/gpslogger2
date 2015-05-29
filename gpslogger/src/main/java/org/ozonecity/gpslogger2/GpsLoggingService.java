@@ -34,6 +34,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.ActivityRecognition;
@@ -782,7 +783,9 @@ public class GpsLoggingService extends Service  {
 
                 if (currentTimeStamp - this.firstRetryTimeStamp <= AppSettings.getRetryInterval() * 1000) {
                     tracer.warn("Only accuracy of " + String.valueOf(Math.floor(loc.getAccuracy())) + " m. Point discarded.");
-                    SetStatus("Inaccurate point discarded.");
+                    // ViTy 29-5-2015 Get Accuracy
+                    //SetStatus("Inaccurate point discarded.("+loc.getAccuracy()+")");
+                    SetStatus("Inaccurate point discarded.("+loc.getAccuracy()+")");
                     //return and keep trying
                     return;
                 }

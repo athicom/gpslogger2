@@ -31,7 +31,7 @@
         android:dialogTitle="@string/settings_distance_in_meters"
         android:numeric="integer"
         android:maxLength="4"
-        android:defaultValue="50"
+        android:defaultValue="10"
         android:hint="@string/settings_enter_meters"/>
 
 
@@ -42,7 +42,7 @@
         android:dialogTitle="@string/settings_accuracy_in_meters"
         android:numeric="integer"
         android:maxLength="4"
-        android:defaultValue="50"
+        android:defaultValue="30"
         android:hint="@string/settings_enter_meters"/>
 
     <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference
@@ -52,7 +52,7 @@
         android:dialogTitle="@string/retry_time_dialog_title"
         android:numeric="integer"
         android:maxLength="4"
-        android:defaultValue="60"
+        android:defaultValue="1"
         android:hint="@string/retry_time_hint"/>
 
     <com.afollestad.materialdialogs.prefs.MaterialEditTextPreference

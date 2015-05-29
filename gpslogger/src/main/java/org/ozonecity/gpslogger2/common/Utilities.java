@@ -177,8 +177,9 @@ public class Utilities {
         AppSettings.setChosenListeners(prefs.getStringSet("listeners", listeners));
 
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        // ViTy 29-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //String minimumDistanceString = prefs.getString("distance_before_logging", "0");
-        String minimumDistanceString = prefs.getString("distance_before_logging", "50");
+        String minimumDistanceString = prefs.getString("distance_before_logging", "10");
 
         if (minimumDistanceString != null && minimumDistanceString.length() > 0) {
             AppSettings.setMinimumDistanceInMeters(Integer
@@ -188,8 +189,9 @@ public class Utilities {
         }
 
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        // ViTy 29-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //String minimumAccuracyString = prefs.getString("accuracy_before_logging", "0");
-        String minimumAccuracyString = prefs.getString("accuracy_before_logging", "50");
+        String minimumAccuracyString = prefs.getString("accuracy_before_logging", "30");
 
         if (minimumAccuracyString != null && minimumAccuracyString.length() > 0) {
             AppSettings.setMinimumAccuracyInMeters(Integer
@@ -211,7 +213,9 @@ public class Utilities {
 
         AppSettings.setKeepFix(prefs.getBoolean("keep_fix", false));
 
-        String retryIntervalString = prefs.getString("retry_time", "60");
+        // ViTy 29-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
+        //String retryIntervalString = prefs.getString("retry_time", "60");
+        String retryIntervalString = prefs.getString("retry_time", "1");
 
         if (retryIntervalString != null && retryIntervalString.length() > 0) {
             AppSettings

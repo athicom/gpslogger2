@@ -105,8 +105,8 @@ public class FolderSelectorDialog extends DialogFragment implements MaterialDial
         MaterialDialog dialog = (MaterialDialog) getDialog();
 
         // ViTy 28-5-2015 Set Default Path
-        //dialog.setTitle(parentFolder.getAbsolutePath());
-        dialog.setTitle("/sdcard/GPSLogger2");
+        dialog.setTitle(parentFolder.getAbsolutePath());
+        //dialog.setTitle("/sdcard/GPSLogger2");
 
         dialog.setItems(getContentsArray());
     }
