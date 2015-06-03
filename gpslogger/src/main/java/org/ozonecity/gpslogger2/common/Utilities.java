@@ -191,7 +191,7 @@ public class Utilities {
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         // ViTy 29-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //String minimumAccuracyString = prefs.getString("accuracy_before_logging", "0");
-        String minimumAccuracyString = prefs.getString("accuracy_before_logging", "30");
+        String minimumAccuracyString = prefs.getString("accuracy_before_logging", "40");
 
         if (minimumAccuracyString != null && minimumAccuracyString.length() > 0) {
             AppSettings.setMinimumAccuracyInMeters(Integer
@@ -202,7 +202,7 @@ public class Utilities {
 
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //String minimumSecondsString = prefs.getString("time_before_logging", "60");
-        String minimumSecondsString = prefs.getString("time_before_logging", "1");
+        String minimumSecondsString = prefs.getString("time_before_logging", "5");
 
         if (minimumSecondsString != null && minimumSecondsString.length() > 0) {
             AppSettings

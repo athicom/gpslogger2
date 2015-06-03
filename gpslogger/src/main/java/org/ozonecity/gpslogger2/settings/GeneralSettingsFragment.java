@@ -65,7 +65,7 @@ public class GeneralSettingsFragment extends PreferenceFragment implements Prefe
         Preference aboutInfo = findPreference("about_version_info");
         try {
 
-            aboutInfo.setTitle("GPSLogger version " + getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName);
+            aboutInfo.setTitle("GPSLogger 2 version " + getActivity().getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName);
             aboutInfo.setOnPreferenceClickListener(this);
         } catch (PackageManager.NameNotFoundException e) {
         }
