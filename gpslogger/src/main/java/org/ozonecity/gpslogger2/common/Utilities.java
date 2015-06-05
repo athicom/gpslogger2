@@ -166,10 +166,10 @@ public class Utilities {
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", false));
         AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", true));
-        // AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
-        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
-                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
-                        "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
+        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
+        //AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
+        //                "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+        //                "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
         AppSettings.setLogToOpenGts(prefs.getBoolean("log_opengts", false));
 
