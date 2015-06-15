@@ -20,7 +20,7 @@
             android:title="@string/log_customurl_title"
             android:summary="@string/log_customurl_summary"
             android:key="log_customurl_enabled"
-            android:defaultValue="false">
+            android:defaultValue="true">
         </org.ozonecity.gpslogger2.views.component.CustomSwitchPreference>
 
         <org.ozonecity.gpslogger2.views.component.CustomSwitchPreference

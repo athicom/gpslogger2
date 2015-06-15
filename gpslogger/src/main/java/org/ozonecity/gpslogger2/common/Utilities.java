@@ -166,10 +166,13 @@ public class Utilities {
         // ViTy 28-5-2015 fixed Default Setting (Utilities.java + pref_xxx.zml)
         //AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", false));
         AppSettings.setLogToCustomUrl(prefs.getBoolean("log_customurl_enabled", true));
-        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
+        //AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", ""));
         //AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
         //                "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
         //                "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
+        AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://172.29.10.147/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
+                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+                        "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
         AppSettings.setLogToOpenGts(prefs.getBoolean("log_opengts", false));
 
@@ -265,7 +268,7 @@ public class Utilities {
         AppSettings.setSmtpPassword(prefs.getString("smtp_password", ""));
         AppSettings.setAutoEmailTargets(prefs.getString("autoemail_target", ""));
         AppSettings.setDebugToFile(prefs.getBoolean("debugtofile", false));
-        AppSettings.setShouldSendZipFile(prefs.getBoolean("autosend_sendzip", true));
+        AppSettings.setShouldSendZipFile(prefs.getBoolean("autosend_sendzip", false));
         AppSettings.setSmtpFrom(prefs.getString("smtp_from", ""));
         AppSettings.setOpenGtsAutoSendEnabled(prefs.getBoolean("autoopengts_enabled", false));
         AppSettings.setOpenGTSServer(prefs.getString("opengts_server", ""));

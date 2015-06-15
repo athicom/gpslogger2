@@ -28,7 +28,7 @@
 
     <org.ozonecity.gpslogger2.views.component.CustomSwitchPreference
             android:key="autosend_sendzip"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/autosend_sendzip_title"
             android:summary="@string/autosend_sendzip_summary"/>
 
