@@ -80,7 +80,9 @@ public class FolderSelectorDialog extends DialogFragment implements MaterialDial
 
                 // ViTy 28-5-2015 Set Default Path
                 //.title(parentFolder.getAbsolutePath())
-                .title("/sdcard/GPSLogger2")
+                //.title("/sdcard/GPSLogger2")
+                // ViTy 15-6-2015 Set Default Path
+                .title(parentFolder.getAbsolutePath())
 
                 .items(getContentsArray())
                 .itemsCallback(this)
@@ -105,8 +107,10 @@ public class FolderSelectorDialog extends DialogFragment implements MaterialDial
         MaterialDialog dialog = (MaterialDialog) getDialog();
 
         // ViTy 28-5-2015 Set Default Path
-        dialog.setTitle(parentFolder.getAbsolutePath());
+        //dialog.setTitle(parentFolder.getAbsolutePath());
         //dialog.setTitle("/sdcard/GPSLogger2");
+        // ViTy 15-6-2015 Set Default Path
+        dialog.setTitle(parentFolder.getAbsolutePath());
 
         dialog.setItems(getContentsArray());
     }

@@ -29,7 +29,10 @@ public class ContentApi extends ContentProvider {
             case "gpslogger_folder":
                 // ViTy 28-5-2015 Set Default Path
                 //result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(getContext()).getAbsolutePath());
-                result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", "/sdcard/GPSLogger2");
+                // ViTy 15-6-2015 Set Default Path
+                //result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", "/sdcard/GPSLogger2");
+                // ViTy 15-6-2015 Set Default Path
+                result = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(getContext()).getAbsolutePath());
                 break;
             default:
                 result = "NULL";

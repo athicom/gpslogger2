@@ -74,6 +74,8 @@ public class LoggingSettingsFragment extends PreferenceFragment
         // ViTy 28-5-2015 Set Default Path
         //String gpsLoggerFolderPath = prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(getActivity()).getAbsolutePath());
         String gpsLoggerFolderPath = prefs.getString("gpslogger_folder", "/sdcard/GPSLogger2");
+        // ViTy 15-6-2015 Set Default Path
+        //String gpsLoggerFolderPath = prefs.getString("gpslogger_folder", Utilities.GetDefaultStorageFolder(getActivity()).getAbsolutePath());
         gpsloggerFolder.setSummary(gpsLoggerFolderPath);
         if(!(new File(gpsLoggerFolderPath)).canWrite()){
             gpsloggerFolder.setSummary(Html.fromHtml("<font color='red'>" + gpsLoggerFolderPath + "</font>"));
