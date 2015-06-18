@@ -324,6 +324,7 @@
 
     <string name="shortcut_start">Start</string>
     <string name="shortcut_stop">Stop</string>
+    <string name="shortcut_point">Point</string>
     <string name="shortcut_pickaction">Pick an action</string>
 
     <string name="log_opengts_title">Log to OpenGTS Server</string>

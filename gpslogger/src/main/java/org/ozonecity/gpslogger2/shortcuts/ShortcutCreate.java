@@ -30,7 +30,7 @@ public class ShortcutCreate extends Activity {
         super.onCreate(savedInstanceState);
 
 
-        final CharSequence[] items = {getString(R.string.shortcut_start), getString(R.string.shortcut_stop)};
+        final CharSequence[] items = {getString(R.string.shortcut_start), getString(R.string.shortcut_stop), getString(R.string.shortcut_point)};
 
         new MaterialDialog.Builder(this)
                 .title(R.string.shortcut_pickaction)
@@ -44,10 +44,14 @@ public class ShortcutCreate extends Activity {
                         if (item == 0) {
                             shortcutIntent = new Intent(getApplicationContext(), ShortcutStart.class);
                             shortcutLabel = getString(R.string.shortcut_start);
-                        } else {
+                        } else if (item == 1) {
                             shortcutIntent = new Intent(getApplicationContext(), ShortcutStop.class);
                             shortcutLabel = getString(R.string.shortcut_stop);
+                        } else {
+                            shortcutIntent = new Intent(getApplicationContext(), ShortcutPoint.class);
+                            shortcutLabel = getString(R.string.shortcut_point);
                         }
+
 
                         Intent.ShortcutIconResource iconResource = Intent.ShortcutIconResource.fromContext
                                 (getApplicationContext(), R.drawable.gpsloggericon3);

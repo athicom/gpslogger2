@@ -115,7 +115,13 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="org.ozonecity.gpslogger2.shortcuts.ShortcutPoint"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name="org.ozonecity.gpslogger2.StartupReceiver"
