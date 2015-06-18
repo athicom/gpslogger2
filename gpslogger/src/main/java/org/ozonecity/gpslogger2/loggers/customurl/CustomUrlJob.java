@@ -10,6 +10,9 @@ import com.path.android.jobqueue.Params;
 import de.greenrobot.event.EventBus;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -69,6 +72,9 @@ public class CustomUrlJob extends Job {
         logUrl = logUrl.replaceAll("(?i)%dt", sdf.format(new Date()));
 
         tracer.debug("Sending to URL: " + logUrl);
+
+        // - begin ViTy 17-6-2015
+
         URL url = new URL(logUrl);
 
         conn = (HttpURLConnection) url.openConnection();
@@ -79,6 +85,19 @@ public class CustomUrlJob extends Job {
         } else {
             tracer.debug("Status code: " + String.valueOf(conn.getResponseCode()));
         }
+
+        /*
+        try {
+            String results = doHttpUrlConnectionAction(logUrl);
+            //System.out.println(results);
+            tracer.debug("Status code: (" + String.valueOf(Session.getCurrentFileName()) + ")" + results);
+        }
+        catch (Exception e) {
+            // deal with the exception in your "controller"
+            tracer.error("Status code: (" + String.valueOf(Session.getCurrentFileName()) + ")" + e.toString());
+        }
+        */
+        // - end ViTy 17-6-2015 revise set timeout to 15 seconds
 
         EventBus.getDefault().post(new UploadEvents.CustomUrl(true));
     }
@@ -93,4 +112,73 @@ public class CustomUrlJob extends Job {
         tracer.error("Could not send to custom URL", throwable);
         return true;
     }
+
+    /**
+     * Returns the output from the given URL.
+     *
+     * I tried to hide some of the ugliness of the exception-handling
+     * in this method, and just return a high level Exception from here.
+     * Modify this behavior as desired.
+     *
+     * @param desiredUrl
+     * @return
+     * @throws Exception
+     */
+    private String doHttpUrlConnectionAction(String desiredUrl)
+            throws Exception
+    {
+        URL url = null;
+        BufferedReader reader = null;
+        StringBuilder stringBuilder;
+
+        try
+        {
+            // create the HttpURLConnection
+            url = new URL(desiredUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // just want to do an HTTP GET here
+            connection.setRequestMethod("GET");
+
+            // uncomment this if you want to write output to this url
+            //connection.setDoOutput(true);
+
+            // give it 15 seconds to respond, change to 15 minutes
+            connection.setReadTimeout(15*1000*60);
+            connection.connect();
+
+            // read the output from the server
+            reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            stringBuilder = new StringBuilder();
+
+            String line = null;
+            while ((line = reader.readLine()) != null)
+            {
+                stringBuilder.append(line + "\n");
+            }
+            return stringBuilder.toString();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            throw e;
+        }
+        finally
+        {
+            // close the reader; this can throw an exception too, so
+            // wrap it in another try/catch block.
+            if (reader != null)
+            {
+                try
+                {
+                    reader.close();
+                }
+                catch (IOException ioe)
+                {
+                    ioe.printStackTrace();
+                }
+            }
+        }
+    }
+
 }
