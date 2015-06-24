@@ -821,12 +821,14 @@ public class GpsLoggingService extends Service  {
             }
 
             // ViTy 24-6-2015 Limit Distance Maximum 500m
+            /*
             if (500 < distanceTraveled) {
                 SetStatus("Limit Distance Maximum " + String.valueOf(Math.floor(distanceTraveled)) + " m traveled. Point discarded.");
                 tracer.warn("Limit Distance Maximum " + String.valueOf(Math.floor(distanceTraveled)) + " m traveled. Point discarded.");
                 StopManagerAndResetAlarm();
                 return;
             }
+            */
 
         }
 
