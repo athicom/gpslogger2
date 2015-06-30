@@ -213,7 +213,7 @@ public class LoggingSettingsFragment extends PreferenceFragment
                 //userInput.setText(prefs.getString("log_customurl_url","http://localhost/log?lat=%LAT&longitude=%LON&time=%TIME&s=%SPD"));
                 //userInput.setText(prefs.getString("log_customurl_url","http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
                 userInput.setText(prefs.getString("log_customurl_url","http://172.29.10.147/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
-                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2-63.0.002" +
                         "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
                 userInput.setSingleLine(true);

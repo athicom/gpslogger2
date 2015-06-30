@@ -16,8 +16,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class CustomUrlJob extends Job {
 
@@ -68,8 +70,16 @@ public class CustomUrlJob extends Job {
         logUrl = logUrl.replaceAll("(?i)%file", String.valueOf(Session.getCurrentFileName()));
 
         // ViTy 27-5-2015 Add %DT
+        // ViTy 30-6-2015 Fixed gpsTime to fixed datetime
+        /*
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         logUrl = logUrl.replaceAll("(?i)%dt", sdf.format(new Date()));
+        */
+        Date localTime = new Date(loc.getTime());
+        String format = "yyyyMMddHHmmss";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        logUrl = logUrl.replaceAll("(?i)%dt", sdf.format(localTime));
+
 
         tracer.debug("Sending to URL: " + logUrl);
 
