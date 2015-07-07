@@ -30,6 +30,7 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.text.Spanned;
 import android.text.format.Time;
 import android.text.method.LinkMovementMethod;
@@ -58,6 +59,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -171,9 +173,12 @@ public class Utilities {
         //AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://119.46.178.66/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
         //                "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
         //                "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
+        //AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://172.29.10.147/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
+        //                "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
+        //                "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
         AppSettings.setCustomLoggingUrl(prefs.getString("log_customurl_url", "http://172.29.10.147/updatelocation.php?latitude=%LAT&longitude=%LON&date=%DT" +
-                        "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2" +
-                        "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
+                "&username=%SER&sessionid=%FILE&accuracy=%ACC&locationmethod=%PROV&eventtype=gpslogger2-63.0.003" +
+                "&extrainfo=%DESC&direction=%DIR&speed=%SPD"));
 
         AppSettings.setLogToOpenGts(prefs.getBoolean("log_opengts", false));
 
@@ -780,7 +785,6 @@ public class Utilities {
 
     }
 
-
     public static String HtmlDecode(String text) {
         if (IsNullOrEmpty(text)) {
             return text;
@@ -789,12 +793,39 @@ public class Utilities {
         return text.replace("&amp;", "&").replace("&quot;", "\"");
     }
 
-    public static String GetBuildSerial() {
+    // ViTy 7/7/2015 Fixed device serial number is "unknown" , remark old function
+    public static String GetBuildSerial0() {
         try {
             return Build.SERIAL;
         } catch (Throwable t) {
             return "";
         }
+    }
+
+    // ViTy 7/7/2015 Fixed device serial number is "unknown", update from old function
+    public static String GetBuildSerial() {
+        try {
+            final String deviceId = Build.SERIAL;
+            if (deviceId == "unknown") {
+                return getManufacturerSerialNumber();
+            }
+            else {
+                return deviceId;
+            }
+        } catch (Throwable t) {
+            return "";
+        }
+    }
+
+    // ViTy 7/7/2015 Fixed device serial number is "unknown", new function for some device
+    public static String getManufacturerSerialNumber() {
+        String serial = null;
+        try {
+            Class<?> c = Class.forName("android.os.SystemProperties");
+            Method get = c.getMethod("get", String.class, String.class);
+            serial = (String) get.invoke(c, "ril.serialnumber", "unknown");
+        } catch (Exception ignored) {}
+        return serial;
     }
 
     public static File[] GetFilesInFolder(File folder) {
